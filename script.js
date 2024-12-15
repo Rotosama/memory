@@ -29,10 +29,39 @@ function startGame(playerName, difficulty) {
 	const gridSize = getGridSize(difficulty);
 	createGameBoard(gameContainer, gridSize);
 	createScoreBoard(playerName, difficulty);
-	setTimeout(() => {
-		flipCards();
-		startTimer();
-	}, 5000);
+
+	// Crear y mostrar el contador de cuenta regresiva
+	const countdownContainer = document.createElement("div");
+	countdownContainer.id = "countdown";
+	countdownContainer.classList.add(
+		"fixed",
+		"inset-0",
+		"flex",
+		"justify-center",
+		"items-center",
+		"bg-gray-600",
+		"bg-opacity-60",
+		"text-white",
+		"text-6xl",
+		"font-bold"
+	);
+	document.body.appendChild(countdownContainer);
+
+	let countdown = 5;
+	const countdownInterval = setInterval(() => {
+		if (countdown > 1) {
+			countdownContainer.textContent = countdown;
+			countdown--;
+		} else {
+			countdownContainer.textContent = "Let's Go!";
+			clearInterval(countdownInterval);
+			setTimeout(() => {
+				countdownContainer.remove();
+				flipCards();
+				startTimer();
+			}, 1000);
+		}
+	}, 1000);
 }
 
 function getGridSize(difficulty) {
@@ -178,12 +207,12 @@ function createScoreBoard(playerName, difficulty) {
 		"text-center"
 	);
 	scoreBoard.innerHTML = `
-        <p class="text-xl">Player: ${playerName}</p>
-        <p class="text-xl">Difficulty: ${difficulty.toUpperCase()}</p>
-        <p class="text-xl">Time: <span id="time">0</span> seconds</p>
-        <p class="text-xl">Moves: <span id="moves">0</span></p>
-        <p class="text-xl">Score: <span id="score">0</span></
-    `;
+		<p class="text-xl uppercase bg-gradient-to-r from-blue-400 via-pink-500 to-red-500 bg-clip-text text-transparent">Player: <span class="text-gray-600">${playerName}</span></p>
+		<p class="text-xl uppercase bg-gradient-to-r from-blue-400 via-pink-500 to-red-500 bg-clip-text text-transparent">Difficulty: <span class="text-gray-600 capitalize">${difficulty}</span></p>
+		<p class="text-xl uppercase bg-gradient-to-r from-blue-400 via-pink-500 to-red-500 bg-clip-text text-transparent">Time: <span id="time" class="text-gray-600">0</span> seconds</p>
+		<p class="text-xl uppercase bg-gradient-to-r from-blue-400 via-pink-500 to-red-500 bg-clip-text text-transparent">Moves: <span id="moves" class="text-gray-600">0</span></p>
+		<p class="text-xl uppercase bg-gradient-to-r from-blue-400 via-pink-500 to-red-500 bg-clip-text text-transparent">Score: <span id="score" class="text-gray-600">0</span></p>
+	`;
 	const containerResetButton = document.createElement("div");
 	containerResetButton.classList.add(
 		"flex",
