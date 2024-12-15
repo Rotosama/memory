@@ -30,8 +30,17 @@ Este proyecto no solo busca recrear el clásico juego de memoria, sino también 
 
 2. Abre el archivo index.html en tu navegador.
 
-Contribuciones 🤝
-¡Las contribuciones son bienvenidas! Si tienes alguna idea o mejora, no dudes en abrir un issue o enviar un pull request.
+## Despliegue en GitHub Pages 🌐
+Puedes ver el proyecto en acción aquí:  
+👉 [Memory Game - GitHub Pages](https://rotosama.github.io/memory/)
 
-Autor ✍️
-Creado con ❤️ por Rotosama.
+## Desafíos del proyecto 💡
+- Crear y organizar todos los elementos del juego directamente desde JavaScript.
+- Aplicar estilos y clases dinámicas con Tailwind CSS.
+- Gestionar eventos y estados para la lógica del juego (como el volteo de cartas).
+
+## Contribuciones 🤝
+¡Las contribuciones son bienvenidas! Si tienes alguna idea o mejora, no dudes en abrir un **issue** o enviar un **pull request**.
+
+## Autor ✍️
+Creado con ❤️ por [Rotosama](https://github.com/Rotosama).
