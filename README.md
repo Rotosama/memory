@@ -14,7 +14,7 @@ Este proyecto no solo busca recrear el clásico juego de memoria, sino también 
 -   Volteo animado de las cartas usando transformaciones 3D.
 -   Tablero dinámico generado completamente con JavaScript.
 -   Diseño adaptable para dispositivos móviles y escritorio gracias a Tailwind.
--   Temporizador para medir el tiempo que tardas en completar el juego.
+-   Temporizador para medir el tiempo que tardas en completar el juego. 
 -   Varias dificultades.
 
 ## Cómo jugar 🕹️
